@@ -1,0 +1,21 @@
+#+title: Problem Notes
+
+* Problems Analyis
+for sums always initialize a var to 0
+
+#+begin_src cpp
+#include <iostream>
+
+int main(){
+    int r, n = 1234;
+    int sum = 0;
+
+    while (n){
+        r = n%10;
+        sum += r; // or any operation you want goes here....
+        n /= 10; // here as well lol
+    }
+    std::cout << sum;
+}
+
+#+end_src

@@ -8,9 +8,9 @@ if energy == 1:
     do_now = random.choice(todos)
     length_now = random.choice(length)
     print(f"{do_now} for {length_now} minutes")
-    too_much = input("too much? y or n ")
+    too_much = input("too much? <y or n> ")
     if too_much == 'y':
-        length_now = length_now/2
+        length_now = length_now/1.5
         print(f"{do_now}, for {length_now} minutes")
 elif energy == 2:
     do_now = random.choice(todos)

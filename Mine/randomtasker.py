@@ -1,7 +1,7 @@
 import random
 # activities randomizer
 energy = int(input("energy? 1-2:  "))
-todos = ('SM IR', 'Python', 'Writing', 'Philosophy', 'VIM', 'linux', 'math with python', 'math', 'IW')
+todos = ('SM IR', 'Python', 'Writing', 'Philosophy', 'math with python', 'math', 'IW')
 length = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]
 
 if energy == 1:

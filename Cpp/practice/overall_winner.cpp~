@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+/* Overall winner
+
+*/
+
+int main()
+{
+  vector<string> s;
+  s.push_back("lol");
+  for (auto y : s)
+  {
+    cout << y;
+  }
+}

@@ -15,7 +15,6 @@
 // Shadowing
 
 fn main() {
-
     let x = 5;
     let x = x + 1;
 
@@ -26,6 +25,10 @@ fn main() {
 
     println!("X is {}", x);
 
-    let spaces = "  ";
-    let spaces = spaces.len();
+    // let spaces = "  ";
+    // let spaces = spaces.len();
+
+    const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+
+    println!("how much is 3 hours in seconds?: {THREE_HOURS_IN_SECONDS}")
 }

@@ -1,35 +1,37 @@
-use std::io; // brings input/output library
-use std::cmp::Ordering;
+// A stupid guessing game
 use rand::Rng;
+use std::cmp::Ordering;
+use std::io; // Call the io library from the standard library
 
 fn main() {
-    println!("Number guessing game!");
+    println!("Guess the number");
 
-    let secret_number = rand::thread_rng().gen_range(1..5);
+    let secret_number = rand::thread_rng().gen_range(1..=100);
 
-    // println!("The secret number is: {}", secret_number);
+    // println!("The secret number is {secret_number}");
 
-    loop{//begin loop
+    loop {
+        println!("Please input your choice");
 
-        println!("Input your guess: ");
+        let mut guess = String::new();
 
-        let mut guess = String::new(); // create a variable called guess with "let"
-        // let apples = 5; // Another example of a variable called "apples" that is immutable
-    
         io::stdin()
-            .read_line(&mut guess) // Call read_line method to receive input and appends input to the guess string.
-            .expect("Failed to read line"); // Error handler
+            .read_line(&mut guess)
+            .expect("Failed to read line");
 
-        let guess: u32 = guess.trim().parse().expect("Please type a number");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
-        println!("You guessed: {}", guess);
+        println!("You guessed: {guess}");
 
-        match guess.cmp(&secret_number){
-            Ordering::Less => println!("Too small !"),
-            Ordering::Greater => println!("Too big !"),
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("Too small of a guess"),
+            Ordering::Greater => println!("Too big of a guess"),
             Ordering::Equal => {
-                println!("You got it!");
-                break;    
+                println!("You guessed it!");
+                break;
             }
         }
     }

@@ -1,0 +1,5 @@
+fn main() {
+    println!("What the fuck");
+}
+
+/* c */
