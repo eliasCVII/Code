@@ -1,1 +1,2 @@
-trick projectile nigga
+## Some code
+mainly c++
