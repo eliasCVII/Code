@@ -11,7 +11,7 @@ public:
   bool containsDuplicate(vector<int> &nums){
     std::unordered_set<int> numSet;
     for ( int num : nums){
-      if (numSet.find(num)!= numSet.end()) {
+      if (numSet.find(num) != numSet.end()) {
         return true;
       }
       numSet.insert(num);
