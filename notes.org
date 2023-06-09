@@ -19,3 +19,103 @@ int main(){
 }
 
 #+end_src
+
+* Bubble Sort
+It has a time complexity of $O(n^{2})$, because it has a two nested loop
+that the outer one runs n times, and the second n-1 times in the worst case
+which means that $n*(n-1)=n^{2}-n$ where we drop the lowest term...
+
+* Sorting algorithms in the STL
+There already exist sorting algorithms inside the c++ standard library.
+such as sort()
+#+begin_src cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  vector<int> v = {4, 2, 5, 3, 5, 8, 3};
+  sort(v.begin(), v.end());
+  for (auto i : v) {
+    cout << i << "\t" << "\n";
+  }
+  sort(v.rbegin(), v.rend());
+    for (auto i : v) {
+    cout << i << "\t";
+  }
+}
+
+#+end_src
+
+#+RESULTS:
+| 2 |   |   |   |   |   |   |
+| 3 |   |   |   |   |   |   |
+| 3 |   |   |   |   |   |   |
+| 4 |   |   |   |   |   |   |
+| 5 |   |   |   |   |   |   |
+| 5 |   |   |   |   |   |   |
+| 8 |   |   |   |   |   |   |
+| 8 | 5 | 5 | 4 | 3 | 3 | 2 |
+
+* Creating our own structs
+you can define your own struct that have their own operators
+which in turn sort your input
+#+begin_src cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+#+end_src
+
+* Binary Search
+when we have an already sorted list, it is easier to find a given number
+thanks to binary search, where the array is divided in half, so in two subarrays, where a loop begin looking through each element until it finds the one we are looking for.
+
+#+begin_src cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int array[5] = {1,2,3,4,5};
+    int x = 5, n = 5;
+    int a = 0, b = n-1;
+    while (a <= b) {
+        int k = (a+b)/2;
+        if (array[k] == x) {
+            cout << x << " found at " << k;
+        }
+        if (array[k]>x)
+            b = k-1;
+        else a = k+1;
+    }
+}
+
+#+end_src
+
+#+RESULTS:
+: 5 found at 4
+
+** Another method
+goes from left to right and halving the array at each completed step,
+step 1= n/2, step 2= n/4 and so on...
+
+#+begin_src cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int array[5] = {1,2,3,4,5};
+    int x = 5, n = 5;
+    int k = 0;
+    for (int b = n/2; b>= 1; b/= 2){
+        while(k+b<n && array[k+b]<=x) k+= b;
+    }
+    if (array[k]==x){
+        cout << x << " found at " << k;
+    }
+}
+
+#+end_src
+
+#+RESULTS:
+: 5 found at 4
