@@ -119,3 +119,31 @@ int main(){
 
 #+RESULTS:
 : 5 found at 4
+
+* Recursion
+A factorial recursive function
+
+#+begin_src cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int fact(int n){
+    int count = 0;
+    if (n==0||n==1){
+        return 1;
+    }
+    else{
+        return n*fact(n-1);
+    }
+}
+
+int main(){
+    int n=5;
+    cout << fact(5);
+    return 0;
+}
+
+#+end_src
+
+#+RESULTS:
+: 120
