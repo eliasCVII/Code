@@ -1,1 +1,0 @@
-/bin/c++ CMakeFiles/ftxui_example_linear_gradient.dir/linear_gradient.cpp.o -o ftxui_example_linear_gradient  ../../libftxui-dom.a ../../libftxui-screen.a 
