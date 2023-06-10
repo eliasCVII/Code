@@ -1,0 +1,1 @@
+/bin/c++ CMakeFiles/ftxui_example_border_colored.dir/border_colored.cpp.o -o ftxui_example_border_colored  ../../libftxui-dom.a ../../libftxui-screen.a 
