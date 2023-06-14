@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// 3 trees
+// tree[0] = 6
+// tree[1] = 17
+// tree[2] = 28
+// vector tress<int>
+
+int main() {
+  vector<int> tree;
+  int n, ans = 0;
+  cin >> n;
+  for (int i = 0; i < n; i++) {
+    int input;
+    cin >> input;
+    tree.push_back(input);
+  }
+  for (auto i : tree) {
+    if (i > 10) {
+      while (i > 10) {
+        i--;
+        ans++;
+      }
+    }
+  }
+  cout << ans;
+  return 0;
+}

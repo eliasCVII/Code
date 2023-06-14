@@ -8,18 +8,26 @@ public:
   int finalValueAfterOperations(vector<string> &operations) {
     map<string, int> toOperate;
     int x = 0;
-    int ans;
+    // int ans;
     for (auto i : operations) {
       toOperate[i]++;
     }
-
-    return ans;
+    for (const auto j : toOperate) {
+      if (j.first == "--X" || j.first == "X--") {
+        x -= j.second;
+      }
+      // stuff for substraction
+      else if (j.first == "X++" || j.first == "++X") {
+        x += j.second;
+      }
+    }
+    return x;
   }
 };
 
 int main() {
   Solution ans;
-  vector<string> operations = {"--X", "X++", "X++"};
-  // expected = 1
+  vector<string> operations = {"++X", "++X", "X++", "--X"};
+  cout << ans.finalValueAfterOperations(operations);
   return 0;
 }
